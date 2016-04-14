@@ -1,0 +1,41 @@
+Dean Notes
+
+Will need to read map from file or there are no arguments read a map from standard input
+stream (might wanna look into read() function)
+ https://en.wikipedia.org/wiki/Standard_streams#Standard_input_.28stdin.29
+then check if map is valid :
+
+Info on first line eg. 9.ox 
+	9 - number of lines 
+	. - character to be used for "empty"
+	o - character to be used for obstacle
+	x - character to be used for "full" (the square)
+	these characters wont always be the same, program has to be flexible!
+need a function to compare info given with actual map and call functions to 
+do other checks for validity. If error is found and print out "map error\n" 
+and main function will move on to next map and start the checking again.
+(seperate all checks into different sub functions)
+
+	- must check if only the specified characters are in the map
+	- must check whether all lines are same length
+	- must check whether there is at least one line of one box
+	- must be a line break after every line
+	
+I suggest we make sure all error checking, reading from files, file system, makefiles etc. is 
+is in place before writing functions that will solve the squares.
+ 
+ IF map is valid the program will call a function that will attempt to solve the program.
+ I suggest we get the exact size of the map and create a "grid" (x & y coordinates) where
+ top left is (0;0) so we can more easily move around the map trying to create squares.
+ 
+  "In the case that more than one solution exists, we’ll choose to represent the square that’s 
+  closest to the top of the map, then the one that’s most to the left." so it will make sense
+  to start at the top left :)
+  
+Things we might wanna keep in mind: 
+- Squares are always square numbers in size... 
+- Once a successful square can be drawn, only its top left coordinate and size need to be stored 
+to recreate it for output if it turns out to be the largest square.
+- Is a 1x1 character considered a square ?
+- What happens if the entire map consists of obstacles?
+
