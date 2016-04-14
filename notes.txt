@@ -28,6 +28,8 @@ is in place before writing functions that will solve the squares.
  I suggest we get the exact size of the map and create a "grid" (x & y coordinates) where
  top left is (0;0) so we can more easily move around the map trying to create squares.
  
+ Verdun: When you say grid, do you mean array?
+ 
   "In the case that more than one solution exists, we’ll choose to represent the square that’s 
   closest to the top of the map, then the one that’s most to the left." so it will make sense
   to start at the top left :)
