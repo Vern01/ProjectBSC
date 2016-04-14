@@ -39,3 +39,8 @@ to recreate it for output if it turns out to be the largest square.
 - Is a 1x1 character considered a square ?
 - What happens if the entire map consists of obstacles?
 
+The challenge is to make the program as fast as possible, so we have to come up with a plan on how to make PROGRAM solve
+the problem in the least amount of reps. That might mean a bit longer code. 
+
+Should we solve the problem first and then try improve the speed?
+the code?
