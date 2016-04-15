@@ -4,7 +4,7 @@ Check that the map lines are all the same length.
 int check_length(char **map, int y_length)
 {
 	int	length;
-	int error;
+	int	error;
 	int	x;
 	int	y;
 	
