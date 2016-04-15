@@ -21,22 +21,22 @@ int check_length(char **map, int y_length)
 			error = 0;
 			break;
 		}
+		y++;
 	}
 	if(error == 0)
 		return 0;
 	else
 		return 1;
 }
-
 /*
 Get's the ref point of length that is required of other lines.
 */
- int first_length(char *map)
+ int first_length(char *line)
  {
 	 int	x;
 	 
 	 x = 0;
-	 while(map[x] != '\n')
-		 x++;
+	 while(line[x] != '\n')
+	 	 x++;
 	 return x;
  }
