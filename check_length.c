@@ -21,6 +21,7 @@ int check_length(char **map, int y_length)
 			error = 0;
 			break;
 		}
+      y++;
 	}
 	if(error == 0)
 		return 0;
