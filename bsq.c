@@ -53,8 +53,8 @@ int		main(int argv, char** argc)
 		while (i <= maps)
 		{
 			map = getMapFile(argc[i], &lines); // save map into 2D array from file
-		//	if (checkMap(char **map)); // check if valid return 1 if no errors found
-		//		solveSquares(argc[i]); //will solve map and output solution
+			if (checkMap(map, lines)) //return 1 if no errors found
+				//solveSquares(argc[i]);will solve map and output solution
 			printMap(map, lines); //will move inro solve function
 			i++;
 			freeMap(map, lines);
