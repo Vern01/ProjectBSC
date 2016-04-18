@@ -18,8 +18,8 @@ and main function will move on to next map and start the checking again.
 
 	- must check if only the specified characters are in the map
 	- must check whether all lines are same length
-	- must check whether there is at least one line of one box
-	- must be a line break after every line
+	- must check whether there is at least one line of one box 	VERDUN: (Moet ons net kyk of daar 'n empty character is?)
+	- must be a line break after every line VERDUN:(Gebruik ons dit nie om deur al die lyne te kyk nie?)
 	
 I suggest we make sure all error checking, reading from files, file system, makefiles etc. is 
 is in place before writing functions that will solve the squares.
