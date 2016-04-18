@@ -5,25 +5,18 @@ int characterCheck(char **map, char *ch, int len)
 {
 	int	x;
 	int	y;
-	int	test;
 		
 	y = 0;
-	test = 0;
 	while(y < len)
 	{
 		x = 0;
 		while(map[y][x] != '\n')
 		{
 			if(map[y][x] != ch[0] || map[y][x] != ch[1] || map[y][x] != ch[2])
-			{
-				test = 1;
-				break;
-			}
+				return (1);
 			x++;
 		}
-		if(test == 1)
-			break;
 		y++;
 	}
-	return test;
+	return (0);
 }
