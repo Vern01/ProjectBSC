@@ -1,4 +1,4 @@
-#include "bsg_head.h"
+#include "bsq_head.h"
 
 void	ft_putstr(char *str)
 {
