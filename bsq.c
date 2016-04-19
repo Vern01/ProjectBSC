@@ -1,4 +1,4 @@
-#include "bsq_head.h"
+#include "bsg_head.h"
 
 void	ft_putstr(char *str)
 {
@@ -12,10 +12,21 @@ void	ft_putstr(char *str)
 	}
 }
 
-void	printMap(char **map, int lines)
+int		map_width(char **map)
+{
+	int	i;
+	
+	i = 0;
+	
+	while (map[1][i] != '\n')
+		i++;
+	return (i);
+}
+
+void	printMap(char **map, int lines)//for debugging
 {
 	int	l;
-	
+
 	l = 0;
 	while (l <= lines)
 		ft_putstr(map[l++]);
@@ -34,28 +45,27 @@ void	freeMap(char **map, int lines)
 
 int		main(int argv, char** argc)
 {
-	int		maps;
 	int		i;
 	int		lines;
 	char	**map;
 
 	i = 1;
-	maps = argv - 1;
-	if (maps == 0)
+	if (argv - 1 == 0)
 	{
 		map = getMapStdIn(&lines);
-		//if (checkMap(char **map));//check if valid return 1 if no errors found
-		//		solveSquares(argc[i]); //will solve map and output solution
+		if (checkMap(map, lines))
+				solve_squares(map, lines, map_width(map));
 		return (0);		
 	}
 	else
 	{
-		while (i <= maps)
+		while (i <= argv - 1)
 		{
-			map = getMapFile(argc[i], &lines); // save map into 2D array from file
-			if (checkMap(map, lines)) //return 1 if no errors found
-				//solveSquares(argc[i]);will solve map and output solution
-			printMap(map, lines); //will move inro solve function
+			map = getMapFile(argc[i], &lines);
+			//printMap(map, lines); //temp
+			//write(1, "\nSolution :\n", 12); //temp
+			if (checkMap(map, lines))
+				solve_squares(map, lines, map_width(map));
 			i++;
 			freeMap(map, lines);
 		}

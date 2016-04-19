@@ -3,7 +3,7 @@
  might remove \n in the future
  */
 
-#include "bsq_head.h"
+#include "bsg_head.h"
 
 int		countLines(char *buffer, int size)
 {
