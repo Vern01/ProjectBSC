@@ -1,7 +1,7 @@
-#include "bsg_head.h"
+#include "bsq_head.h"
 
 /*
-Get's the ref point of length that is required of other lines.
+	Get's the ref point of length that is required of other lines.
 */
  int first_length(char *line)
  {
@@ -14,65 +14,55 @@ Get's the ref point of length that is required of other lines.
  }
 
  /*
-Check that the map lines are all the same length.
+	Check that the map lines are all the same length.
 */
 int check_length(char **map, int y_length)
 {
 	int	length;
-	int	error;
 	int	x;
 	int	y;
 
 	y = 1;
-	error = 1;
 	length = first_length(map[1]);
-	while(y <= y_length)
+	while (y <= y_length)
 	{
 		x = 0;
-		while(map[y][x] != '\n')
+		while (map[y][x] != '\n')
 			x++;
-		if(y != 0 && x != length)
-		{
-			error = 0;
-			break;
-		}
+		if (y != 0 && x != length)
+			return (0);
 		y++;
 	}
-	if(error == 0)
-		return 0;
-	else
-		return 1;
+	return (1);
 }
 
 /*
-Check if only given chars are on the map;
+	Check if only given chars are on the map;
 */
 int	check_chars(char **map, int y_length)
 {
 	int 	x;
 	int		y;
-	int 	error;
 	char	c;
 
-	error = 1;
 	y = 1;
 	while (y <= y_length)
 	{
 		x = 0;
-		while(map[y][x] != '\n')
+		while (map[y][x] != '\n')
 		{
 			c = map[y][x];
-			if (c != map[0][1] && c != map[0][2] && c != map[0][3])
-			error = 0;
+			if (c != g_open && c != g_obstacle)
+				return (0);
 			x++;
 		}
 		y++;
 	}
-	return (error);
+	return (1);
 }
 
 /*
-Check if map size is ateast 1 
+	Check if map size is ateast 1 
 */
 int	check_size(char **map, int y_length)
 {

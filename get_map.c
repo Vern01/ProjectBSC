@@ -1,9 +1,8 @@
-/*Functions to retrieve map and save into char** array 
- Note that \n characters and \0 is also saved into array
- might remove \n in the future
- */
-
-#include "bsg_head.h"
+#include "bsq_head.h"
+/*
+	Functions to retrieve map and save into char** array 
+	note that \n characters and \0 is also saved into array
+*/
 
 int		countLines(char *buffer, int size)
 {
@@ -19,7 +18,6 @@ int		countLines(char *buffer, int size)
 		i++;
 	
 	}
-	
 	return (lines);
 }
 

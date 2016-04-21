@@ -1,4 +1,4 @@
-#include "bsg_head.h"
+#include "bsq_head.h"
 
 int		is_square(int count, int size)
 {
@@ -37,16 +37,15 @@ int		find_square(char **map, int y_start, int x_start, char o)
 	size = 1;
 	while (1)
 	{
-		while (o == map[y][x] && y < y_start + size && y < (map[0][0] - '0'))
+		while (o == map[y][x] && y < y_start + size && y < g_lines)
 			increment(&count, &y);
 		if (y == y_start + size)
-		{
-				while (o == map[y][x] && x >= x_start)
-					decrement(&count, &x);
-		}
+			while (o == map[y][x] && x >= x_start)
+				decrement(&count, &x);
 		if (is_square(count, size + 1))
 			size++;
-		else return (size);
+		else 
+			return (size);
 		x = x + size + 1;
 		y = y_start;
 	}
